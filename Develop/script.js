@@ -15,12 +15,29 @@ var confirmUpperCase;
 var confirmLowerCase;
 
 // Write password to the #password input
+function generatePassword() {
+  var confirmLength = (prompt("How many characters would you like your password to contain?"));
+
+    // loop for outside parameters
+    while(confirmLength <= 7 || confirmLength >= 51) {
+    alert("Password length must be between 8-50 characters. Try again.");
+    var confirmLength = (prompt("How many characters would you like your password to contain?"));
+    }
+
+    // repeat how many characters user will have
+    alert('Your password will have ${confirmLength} characters');
+
+  // parameters of password
+  var confirmSpecialCharacter = confirm("Click OK to confirm if you would like to include special characters"); 
+  // var
+  // var
+  // var
+}
+
+// // Add event listener to generate button
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
- }
-
-// // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+}
