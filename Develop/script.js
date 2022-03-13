@@ -43,8 +43,25 @@ function generatePassword() {
   
     var passwordCharacters = []
 
+  if (confirmSpecialCharacter) {
+    passwordCharacters = passwordCharacters.concat(specialChar)
+  } if (confirmNumericCharacter) {
+    passwordCharacters = passwordCharacters.concat(number)
+  } if (confirmLowerCase) {
+    passwordCharacters = passwordCharacters.concat(alphaLower)
+  } if (confirmUpperCase) {
+    passwordCharacters = passwordCharacters.concat(alphaUpper)
+  }
+
 console.log(passwordCharacters)
-    
+
+  var randomPassword = ""
+
+  for (var i = 0; i < confirmLength; i++) {
+    randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+    console.log(randomPassword)
+  }
+    return randomPassword;
 }
 
 // // Add event listener to generate button
