@@ -1,5 +1,5 @@
 // Assignment code here
-var generateBtn = document.querySelector("#generate").addEventListener("click", writePassword);
+document.querySelector("#generate").addEventListener("click", writePassword);
 
 // arrays
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -25,13 +25,26 @@ function generatePassword() {
     }
 
     // repeat how many characters user will have
-    alert('Your password will have ${confirmLength} characters');
+    alert(`Your password will have ${confirmLength} characters`);
 
   // parameters of password
   var confirmSpecialCharacter = confirm("Click OK to confirm if you would like to include special characters"); 
-  // var
-  // var
-  // var
+  var confirmNumericCharacter = confirm("Click OK to confirm if you would like to include numeric characters");
+  var confirmLowerCase = confirm("Click OK to confirm if you would like to include lowercase characters");
+  var confirmUpperCase = confirm("Click OK to confirm if you would like to include uppercase characters");
+    // loop if answer is outside the set parameters
+    while(confirmUpperCase === false && confirmLowerCase === false && confirmSpecialCharacter === false && confirmNumericCharacter === false) {
+      alert("You must choose at least one parameter");
+      var confirmSpecialCharacter = confirm("Click OK to confirm if you would like to include special characters");
+      var confirmNumericCharacter = confirm("Click OK to confirm if you would like to include numeric characters");
+      var confirmLowerCase = confirm("Click OK to confirm if you would like to include lowercase characters");
+      var confirmUpperCase = confirm("Click OK to confirm if you would like to include uppercase characters");
+    }
+  
+    var passwordCharacters = []
+
+console.log(passwordCharacters)
+    
 }
 
 // // Add event listener to generate button
